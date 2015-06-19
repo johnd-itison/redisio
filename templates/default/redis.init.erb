@@ -72,7 +72,7 @@ case "$1" in
                 echo "Stopping ..."
 
                 <%= "$CLIEXEC #{connection_string} save" if @shutdown_save %>
-                $CLIEXEC <%= connection_string %> shutdown
+                $CLIEXEC <%= connection_string %> shutdown || kill $PID
 
                 while [ -x /proc/${PID} ]
                 do
