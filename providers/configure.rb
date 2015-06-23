@@ -243,6 +243,7 @@ def configure
           :clusternodetimeout         => current['clusternodetimeout'],
           :includes                   => current['includes']
         })
+        notifies :restart, "service[redis#{server_name}]", :delayed
       end
       #Setup init.d file
 
