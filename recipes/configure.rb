@@ -59,4 +59,4 @@ redis_instances.each do |current_server|
 
 end
 
-node.set['redisio']['servers'] = redis_instances
+node.normal['redisio']['servers'] = redis_instances
